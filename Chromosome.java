@@ -24,7 +24,7 @@ public class Chromosome
         int lengthOfFirstParent = this.chromosome.length();
         for (int i=0; i<lengthOfFirstParent; i++) {
 
-            probability = Runner.randomNumber(0, 100) / 100;
+            probability = Utilities.randomNumber(0, 100) / 100;
 
             // take the constant value from settings
             if (probability < 0.45) { //TODO: create a function for setting this variable name
@@ -36,7 +36,7 @@ public class Chromosome
             else {
                 // implement mutation here
                 // ascii upper value is 126
-                childChromosome += Mutation.asciiToString(Runner.randomNumber(0,126));
+                childChromosome += Mutation.asciiToString(Utilities.randomNumber(0,126));
             }
         }
         Chromosome childChromosomeObject = new Chromosome(childChromosome);
@@ -50,9 +50,9 @@ public class Chromosome
 
     public int calculateFitness(){
         int fitness = 0;
-        int targetLength = Runner.TARGET.length(); //can be reused if already in memory
+        int targetLength = Utilities.TARGET.length(); //can be reused if already in memory
         for (int i=0; i<targetLength; i++){
-            if (this.chromosome.charAt(i) != Runner.TARGET.charAt(i)){
+            if (this.chromosome.charAt(i) != Utilities.TARGET.charAt(i)){
                 fitness++;
             }
         }
