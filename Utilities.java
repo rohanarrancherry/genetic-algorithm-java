@@ -25,12 +25,13 @@ public class Utilities {
         return randomNumber;
     }
 
-    public static ArrayList<Chromosome> createPopulation(){
+    public static Population createPopulation(){
+
         ArrayList<Chromosome> population = new ArrayList<Chromosome>();
         for (int i=0; i<POPULATION; i++){
             population.add(generateRandomChromosome());
         }
-        return population;
+        return Population.getInstance(population);
     }
 
     public static Chromosome generateRandomChromosome(){
