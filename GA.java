@@ -12,7 +12,7 @@ public class GA {
         while(!found){
             population.sort();
             // checking whether the top chromosome is the output
-            if(population.get(0).getFitness() <= 0)
+            if(population.get(0).getFitness() >= Utilities.TARGET.length())
             {
                 break;
             }
@@ -23,11 +23,6 @@ public class GA {
 
             // creating the remaining population by crossover and mutation
             for (int i=0; i<Utilities.POPULATION*(1-Utilities.ELITISM_RATE); i++){
-                /**
-                 * Selection chromosomeSelection = getSelection()
-                 * population.setSelection(chromosomeSelection)
-                 *
-                 */
                 Selection chromosomeSelection = new RouletteWheelSelection(population);
                 population.setSelection(chromosomeSelection);
                 Chromosome firstParent = population.select();
@@ -35,7 +30,6 @@ public class GA {
                 Chromosome child = firstParent.crossover(secondParent);
                 population.add(child);
             }
-            //replacing old population with new population
             System.out.println("Generation: " + generation + " String: " + population.get(0).chromosome +
                     " Fitness: " + population.get(0).getFitness());
             generation++;

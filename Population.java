@@ -44,7 +44,7 @@ public class Population {
     }
 
     public void sort(){
-        population.sort(Comparator.comparingInt(Chromosome::getFitness));
+        population.sort(Comparator.comparingInt(Chromosome::getFitness).reversed());
     }
 
     public Chromosome get(int index){
@@ -57,7 +57,7 @@ public class Population {
 
     public void performElitism(){
         int removed = 0;
-        // removing last population
+        // removing last x% population
         while (removed < (1-Utilities.ELITISM_RATE)*100) {
             population.remove(population.size() - 1);
             removed++;

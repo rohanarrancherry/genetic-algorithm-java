@@ -50,9 +50,9 @@ public class Chromosome
 
     public int calculateFitness(){
         int fitness = 0;
-        int targetLength = Utilities.TARGET.length(); //can be reused if already in memory
+        int targetLength = Utilities.TARGET.length();
         for (int i=0; i<targetLength; i++){
-            if (this.chromosome.charAt(i) != Utilities.TARGET.charAt(i)){
+            if (this.chromosome.charAt(i) == Utilities.TARGET.charAt(i)){
                 fitness++;
             }
         }
