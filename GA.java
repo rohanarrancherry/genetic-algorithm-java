@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class GA {
+    String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
 
     public void run(){
         boolean found = false;
@@ -20,11 +21,11 @@ public class GA {
             // Performing elitism
             // transferring x% of the previous generation to the
             population.performElitism();
-
+            SelectionFactory selectionFactory = new SelectionFactory();
             // creating the remaining population by crossover and mutation
             for (int i=0; i<Utilities.POPULATION*(1-Utilities.ELITISM_RATE); i++){
                 // call factory method for selection, mention the type of selection
-                RouletteWheelSelection chromosomeSelection = new RouletteWheelSelection();
+                Selection chromosomeSelection = selectionFactory.createSelection(selectionType);
                 population.setSelection(chromosomeSelection);
                 Chromosome firstParent = population.select();
                 Chromosome secondParent = population.select();

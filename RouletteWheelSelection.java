@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class RouletteWheelSelection implements Selection{
-    
+
     public Chromosome select(Population population){
         int fitnessSum=0;
         Chromosome selected = null;

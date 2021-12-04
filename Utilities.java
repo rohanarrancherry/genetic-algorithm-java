@@ -16,6 +16,9 @@ public class Utilities {
     public static String TARGET = "Hello, I'm found using Genetic Algorithm";
     public static int POPULATION = 100;
     public static double ELITISM_RATE = 0.1;
+    public enum SELECTIONS {
+        RouletteWheelSelection,
+    }
 
     public static int randomNumber(int lowerBound, int upperBound){
         upperBound = upperBound + 1;
