@@ -23,7 +23,8 @@ public class GA {
 
             // creating the remaining population by crossover and mutation
             for (int i=0; i<Utilities.POPULATION*(1-Utilities.ELITISM_RATE); i++){
-                Selection chromosomeSelection = new RouletteWheelSelection(population);
+                // call factory method for selection, mention the type of selection
+                RouletteWheelSelection chromosomeSelection = new RouletteWheelSelection();
                 population.setSelection(chromosomeSelection);
                 Chromosome firstParent = population.select();
                 Chromosome secondParent = population.select();
