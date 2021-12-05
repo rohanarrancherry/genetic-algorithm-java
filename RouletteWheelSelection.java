@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class RouletteWheelSelection implements Selection{
 
     public Chromosome select(Population population){
@@ -9,6 +7,7 @@ public class RouletteWheelSelection implements Selection{
             fitnessSum += x.getFitness();
         }
         int randomNumber = Utilities.randomNumber(0, fitnessSum);
+        fitnessSum = 0;
         for(Chromosome x : population.population){
             fitnessSum += x.getFitness();
             if (fitnessSum>=randomNumber){
