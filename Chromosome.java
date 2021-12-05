@@ -1,10 +1,15 @@
 public class Chromosome
 {
     String chromosome;
+    Crossover crossover;
 
     public Chromosome(String chromosome){
         this.chromosome = chromosome;
     };
+
+    public void setCrossover(Crossover crossover){
+        this.crossover = crossover;
+    }
 
     public String toString(){
         return "Chromosome" + this.chromosome + ":Fitness" + String.valueOf(getFitness());
@@ -15,32 +20,7 @@ public class Chromosome
     }
 
     public Chromosome crossover(Chromosome secondParent){
-        /*
-         * define which type of crossover is required
-         * do this by implementing abstract factory pattern
-         * */
-        float probability;
-        String childChromosome = "";
-        int lengthOfFirstParent = this.chromosome.length();
-        for (int i=0; i<lengthOfFirstParent; i++) {
-
-            probability = Utilities.randomNumber(0, 100) / 100;
-
-            // take the constant value from settings
-            if (probability < 0.45) { //TODO: create a function for setting this variable name
-                childChromosome += this.chromosome.charAt(i);
-            }
-            else if (probability < 0.90) {
-                childChromosome += secondParent.chromosome.charAt(i);
-            }
-            else {
-                // implement mutation here
-                // ascii upper value is 126
-                childChromosome += Mutation.asciiToString(Utilities.randomNumber(0,126));
-            }
-        }
-        Chromosome childChromosomeObject = new Chromosome(childChromosome);
-        return childChromosomeObject;
+        return crossover.crossover(this, secondParent);
     }
 
 

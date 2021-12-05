@@ -19,6 +19,9 @@ public class Utilities {
     public enum SELECTIONS {
         RouletteWheelSelection,
     }
+    public enum CROSSOVERS {
+        CustomCrossover,
+    }
 
     public static int randomNumber(int lowerBound, int upperBound){
         upperBound = upperBound + 1;

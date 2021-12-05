@@ -3,6 +3,7 @@ import java.util.Comparator;
 
 public class GA {
     String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
+    String crossoverType = String.valueOf(Utilities.CROSSOVERS.CustomCrossover);
 
     public void run(){
         boolean found = false;
@@ -22,6 +23,7 @@ public class GA {
             // transferring x% of the previous generation to the
             population.performElitism();
             SelectionFactory selectionFactory = new SelectionFactory();
+            CrossoverFactory crossoverFactory = new CrossoverFactory();
             // creating the remaining population by crossover and mutation
             for (int i=0; i<Utilities.POPULATION*(1-Utilities.ELITISM_RATE); i++){
                 // call factory method for selection, mention the type of selection
@@ -29,6 +31,12 @@ public class GA {
                 population.setSelection(chromosomeSelection);
                 Chromosome firstParent = population.select();
                 Chromosome secondParent = population.select();
+
+                // setting the crossover type for the Chromosome
+                // create crossover object using factory method
+                // creating the object temporarly
+                Crossover crossover = crossoverFactory.createCrossover(crossoverType);
+                firstParent.setCrossover(crossover);
                 Chromosome child = firstParent.crossover(secondParent);
                 population.add(child);
             }
