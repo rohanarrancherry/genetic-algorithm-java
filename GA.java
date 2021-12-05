@@ -1,9 +1,14 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-
 public class GA {
     String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
     String crossoverType = String.valueOf(Utilities.CROSSOVERS.CustomCrossover);
+
+    public void setSelection(String selectionType){
+        this.selectionType = selectionType;
+    }
+
+    public void setCrossover(String crossoverType){
+        this.crossoverType = crossoverType;
+    }
 
     public void run(){
         boolean found = false;
@@ -32,9 +37,6 @@ public class GA {
                 Chromosome firstParent = population.select();
                 Chromosome secondParent = population.select();
 
-                // setting the crossover type for the Chromosome
-                // create crossover object using factory method
-                // creating the object temporarly
                 Crossover crossover = crossoverFactory.createCrossover(crossoverType);
                 firstParent.setCrossover(crossover);
                 Chromosome child = firstParent.crossover(secondParent);
