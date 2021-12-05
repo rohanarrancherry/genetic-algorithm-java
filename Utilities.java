@@ -33,7 +33,7 @@ public class Utilities {
 
     public static Population createPopulation(){
 
-        ArrayList<Chromosome> population = new ArrayList<Chromosome>();
+        ArrayList<Chromosome> population = new ArrayList<>();
         for (int i=0; i<POPULATION; i++){
             population.add(generateRandomChromosome());
         }
