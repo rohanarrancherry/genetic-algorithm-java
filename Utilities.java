@@ -18,6 +18,7 @@ public class Utilities {
     public static double ELITISM_RATE = 0.1;
     public enum SELECTIONS {
         RouletteWheelSelection,
+        RankSelection,
     }
     public enum CROSSOVERS {
         CustomCrossover,
