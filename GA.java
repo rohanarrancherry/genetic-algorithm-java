@@ -40,6 +40,7 @@ public class GA {
                 Crossover crossover = crossoverFactory.createCrossover(crossoverType);
                 firstParent.setCrossover(crossover);
                 Chromosome child = firstParent.crossover(secondParent);
+                //do mutation
                 population.add(child);
             }
             System.out.println("Generation: " + generation + " String: " + population.get(0).chromosome +
