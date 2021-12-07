@@ -6,4 +6,11 @@ public class Point {
         this.row = row;
         this.column = column;
     }
+
+    public boolean equals(Point p2){
+        if (this.column == p2.column && this.row == p2.row){
+            return true;
+        }
+        return false;
+    }
 }
