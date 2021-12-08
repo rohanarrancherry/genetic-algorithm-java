@@ -2,17 +2,29 @@ public class Chromosome
 {
     String chromosome;
     Crossover crossover;
+    Mutation mutation;
 
     public Chromosome(String chromosome){
+        if (chromosome.length() != 40){
+            System.out.println("Error in creating chromosome");
+        }
         this.chromosome = chromosome;
-    };
+    }
 
     public void setCrossover(Crossover crossover){
         this.crossover = crossover;
     }
 
+    public void setMutation(Mutation mutation){
+        this.mutation = mutation;
+    }
+
+    public void mutate(){
+        mutation.mutate(this);
+    }
+
     public String toString(){
-        return "Chromosome" + this.chromosome + ":Fitness" + String.valueOf(getFitness());
+        return "Chromosome" + this.chromosome + ":Fitness" + getFitness();
     }
 
     public int getFitness(){
@@ -31,6 +43,9 @@ public class Chromosome
     public int calculateFitness(){
         int fitness = 0;
         int targetLength = Utilities.TARGET.length();
+        if (this.chromosome.length() != 40){
+            System.out.println("Break here");
+        }
         for (int i=0; i<targetLength; i++){
             if (this.chromosome.charAt(i) == Utilities.TARGET.charAt(i)){
                 fitness++;

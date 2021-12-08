@@ -11,13 +11,8 @@ public class CustomCrossover implements Crossover{
             if (probability < 0.45) { //TODO: create a function for setting this variable name
                 childChromosome += firstParent.chromosome.charAt(i);
             }
-            else if (probability < 0.90) {
+            else if (probability <= 1) {
                 childChromosome += secondParent.chromosome.charAt(i);
-            }
-            else {
-                // implement mutation here
-                // ascii upper value is 126
-                childChromosome += Mutation.asciiToString(Utilities.randomNumber(0,126));
             }
         }
 

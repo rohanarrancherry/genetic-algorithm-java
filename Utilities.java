@@ -16,12 +16,17 @@ public class Utilities {
     public static String TARGET = "Hello, I'm found using Genetic Algorithm";
     public static int POPULATION = 100;
     public static double ELITISM_RATE = 0.1;
+    public static double MUTATION_RATE = 0.1;
+
     public enum SELECTIONS {
         RouletteWheelSelection,
         RankSelection,
     }
     public enum CROSSOVERS {
         CustomCrossover,
+    }
+    public enum MUTATIONS {
+        CustomMutation,
     }
 
     public static int randomNumber(int lowerBound, int upperBound){
@@ -30,6 +35,13 @@ public class Utilities {
         Random rand = new Random();
         randomNumber = rand.nextInt(upperBound-lowerBound) + lowerBound;
         return randomNumber;
+    }
+
+    public static String asciiToString(int randNumber){
+        // should we use char?
+        String str;
+        str = Character.toString((char) randNumber);
+        return str;
     }
 
     public static Population createPopulation(){
@@ -45,7 +57,7 @@ public class Utilities {
         String randomChromosome = "";
         int targetLength = TARGET.length();
         for(int i=0; i<targetLength; i++){
-            randomChromosome += Mutation.asciiToString(randomNumber(0, 126)); //convert this into a common function
+            randomChromosome += Utilities.asciiToString(randomNumber(0, 126)); //convert this into a common function
         }
         return new Chromosome(randomChromosome);
     }
