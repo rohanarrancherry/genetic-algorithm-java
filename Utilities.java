@@ -40,6 +40,26 @@ public class Utilities {
         return Population.getInstance(population);
     }
 
+    public static Population createSnakePopulation(){
+        // todo: implement calculation of length
+        int targetLength = 2032;
+
+        ArrayList<Chromosome> population = new ArrayList<>();
+        for (int i=0; i<POPULATION; i++){
+            population.add(generateSnakeRandomChromosome(targetLength));
+        }
+        return Population.getInstance(population);
+    }
+
+    public static Chromosome generateSnakeRandomChromosome(int targetLength){
+        String randomChromosome = "";
+        for(int i=0; i<targetLength; i++){
+            randomChromosome += randomNumber(0, 1); //convert this into a common function
+        }
+        return new Chromosome(randomChromosome);
+    }
+
+
     public static Chromosome generateRandomChromosome(){
         String randomChromosome = "";
         int targetLength = TARGET.length();

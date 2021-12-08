@@ -12,7 +12,11 @@ public class Game {
     Point fruitPosition = generateRandomFruitPosition();
     int score = 0;
     int highScore = 0;
+    Population population;
 
+    public void setPopulation(Population population) {
+        this.population = population;
+    }
 
     public Point generateRandomFruitPosition(){
 
@@ -106,8 +110,12 @@ public class Game {
 
     public void gameOver(){
         // do update the weights using GA
+        snake = new Snake(rows, columns);
+        fruitPosition = generateRandomFruitPosition();
+        restart = true;
+        if (score > highScore){
+            highScore = score;
+        }
+        score = 0;
     }
-
-
-
 }
