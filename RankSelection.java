@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-
 public class RankSelection implements Selection{
 
     public Chromosome select(Population population){
 
 
-        population.sort();
+        population.ascendingSort();
 
         int rank = 1;
         int rankSum=0;
