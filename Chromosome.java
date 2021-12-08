@@ -5,9 +5,6 @@ public class Chromosome
     Mutation mutation;
 
     public Chromosome(String chromosome){
-        if (chromosome.length() != 40){
-            System.out.println("Error in creating chromosome");
-        }
         this.chromosome = chromosome;
     }
 
@@ -43,9 +40,6 @@ public class Chromosome
     public int calculateFitness(){
         int fitness = 0;
         int targetLength = Utilities.TARGET.length();
-        if (this.chromosome.length() != 40){
-            System.out.println("Break here");
-        }
         for (int i=0; i<targetLength; i++){
             if (this.chromosome.charAt(i) == Utilities.TARGET.charAt(i)){
                 fitness++;

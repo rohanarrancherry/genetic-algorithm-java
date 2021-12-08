@@ -9,9 +9,6 @@ public class CustomMutation implements Mutation{
             StringBuilder newChromosome = new StringBuilder(chromosome.chromosome);
             newChromosome.setCharAt(randomIndex, randomChar);
             chromosome.chromosome = String.valueOf(newChromosome);
-            if (chromosome.chromosome.length() !=40 ){
-                System.out.println("Break herere");
-            }
         }
     }
 }
