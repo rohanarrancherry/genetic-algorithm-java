@@ -1,7 +1,7 @@
 public class GA {
-    String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
-    String crossoverType = String.valueOf(Utilities.CROSSOVERS.CustomCrossover);
-    String mutationType = String.valueOf(Utilities.MUTATIONS.CustomMutation);
+    String selectionType;  //= String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
+    String crossoverType; //= String.valueOf(Utilities.CROSSOVERS.CustomCrossover);
+    String mutationType; //= String.valueOf(Utilities.MUTATIONS.CustomMutation);
 
     public void setSelection(String selectionType){
         this.selectionType = selectionType;

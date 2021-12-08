@@ -4,6 +4,8 @@ public class CrossoverFactory {
         if (crossoverType.equals(String.valueOf(Utilities.CROSSOVERS.CustomCrossover))) {
             crossover = new CustomCrossover();
         }
+        else if(crossoverType.equals(String.valueOf(Utilities.CROSSOVERS.OnePointCrossover)))
+            crossover = new OnepointCrossover();
         return crossover;
     }
 }

@@ -20,10 +20,11 @@ public class Utilities {
 
     public enum SELECTIONS {
         RouletteWheelSelection,
-        RankSelection,
+        RankSelection
     }
     public enum CROSSOVERS {
         CustomCrossover,
+        OnePointCrossover
     }
     public enum MUTATIONS {
         CustomMutation,
