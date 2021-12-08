@@ -47,6 +47,10 @@ public class Population {
         population.sort(Comparator.comparingInt(Chromosome::getFitness).reversed());
     }
 
+    public void ascendingSort(){
+        population.sort(Comparator.comparingInt(Chromosome::getFitness));
+    }
+
     public Chromosome get(int index){
         return population.get(index);
     }
