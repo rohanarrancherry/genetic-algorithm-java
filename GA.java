@@ -11,6 +11,10 @@ public class GA {
         this.crossoverType = crossoverType;
     }
 
+    public void setMutation(String mutationType){
+        this.mutationType = mutationType;
+    }
+
     public void run(){
         boolean found = false;
         int generation = 0;
