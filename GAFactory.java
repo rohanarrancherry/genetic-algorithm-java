@@ -1,9 +1,9 @@
 public abstract class GAFactory {
 
-    public GA getGA(String selection, String crossOver, String mutation ){
-        GA ga = createGA(selection, crossOver, mutation);
+    public GA getGA(){
+        GA ga = createGA();
         return ga;
     }
-    abstract GA createGA(String selection, String crossOver, String mutation);
+    abstract GA createGA();
 
 }

@@ -1,7 +1,7 @@
 
 public class OnepointCrossover implements Crossover{
     public Chromosome crossover(Chromosome firstParent, Chromosome secondParent){
-
+        System.out.println("One Point Crossover is running...");
         String childChromosome = "";
         int lengthOfFirstParent = firstParent.chromosome.length();
         int crossoverPoint = Utilities.randomNumber(0,lengthOfFirstParent);
