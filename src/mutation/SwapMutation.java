@@ -23,7 +23,7 @@ public class SwapMutation implements Mutation{
     public void mutate(Chromosome chromosome) {
 
         int someRand = Utilities.randomNumber(0, 100);
-        int l = chromosome.chromosome.length();
+        int l = chromosome.chromosome.length() -1;
         int rand1 = Utilities.randomNumber(0, l);
         int rand2 = Utilities.randomNumber(0, l);
         while(rand1 == rand2)
@@ -32,10 +32,15 @@ public class SwapMutation implements Mutation{
         if (probability<= Utilities.MUTATION_RATE){
 
             StringBuilder newChromosome = new StringBuilder(chromosome.chromosome);
-            char tempChar = newChromosome.charAt(rand1);
-            newChromosome.setCharAt(rand1, newChromosome.charAt(rand2));
-            newChromosome.setCharAt(rand2, tempChar);
+
+            int firstChar = (int) newChromosome.charAt(rand1);
+            int secondChar = (int) newChromosome.charAt(rand2);
+            firstChar = firstChar+5;
+            secondChar = secondChar + 5;
+            newChromosome.setCharAt(rand1, Utilities.asciiToString(secondChar).charAt(0));
+            newChromosome.setCharAt(rand2, Utilities.asciiToString(firstChar).charAt(0));
             chromosome.chromosome = String.valueOf(newChromosome);
+
         }
     }
 }

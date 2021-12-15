@@ -11,12 +11,16 @@ public class NonEliteGA extends GA{
     public NonEliteGA(){
         setSelection(String.valueOf(Utilities.SELECTIONS.RankSelection));
         setCrossover(String.valueOf(Utilities.CROSSOVERS.UniformCrossover));
-        setMutation(String.valueOf(Utilities.MUTATIONS.RandomResetMutation));
+        setMutation(String.valueOf(Utilities.MUTATIONS.SwapMutation));
         setReplacement(String.valueOf(Utilities.REPLACEMENT.NonElite));
     }
 
+
+
+    // overriding the setReplacement since the programmer should not change the
+    // property of EliteGA during runtime
     @Override
     public void setReplacement(String replacementType) {
-        super.setReplacement(replacementType);
+        super.replacementType = String.valueOf(Utilities.REPLACEMENT.NonElite);
     }
 }

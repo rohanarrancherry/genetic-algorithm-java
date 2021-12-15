@@ -21,7 +21,7 @@ public class Utilities {
      * just to show the proper comparison and working of Genetic Algorithm
      * using different configurations(Selection Type/ CrossOver Type, Mutation Type etc.)
      */
-    public static String TARGET = "Hello, I'm found using Genetic Algorithm";
+    public static final String TARGET = "Hello, I'm found using Genetic Algorithm";
 
     /**
      * Static variable POPULATION represents the number of chromosomes in a generation.

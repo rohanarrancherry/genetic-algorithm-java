@@ -89,12 +89,16 @@ public class GA {
 
             System.out.println("********************************************");
             System.out.println("Generation: " + generation + "\nFittest String: " + population.get(0).chromosome +
-                    "\nFitness: " + population.get(0).getFitness());
+                    "\nFitness: " + population.get(0).getFitness() + "\nSelection: " + selectionType +
+                    "\nCrossover: " + crossoverType + "\nMutattion: " + mutationType +
+                    "\nReplacement: " + replacementType);
             generation++;
         }
 
         System.out.println("\n\n$$$$$$$$$$$$$$$$$$$FINAL$$$$$$$$$$$$$$$$$$$$$$");
-        System.out.println("Generation: " + generation + "\nOutput String: " + population.get(0).chromosome +
-                "\nFitness: " + population.get(0).getFitness());
+        System.out.println("Generation: " + generation + "\nFittest String: " + population.get(0).chromosome +
+                "\nFitness: " + population.get(0).getFitness() + "\nSelection: " + selectionType +
+                "\nCrossover: " + crossoverType + "\nMutattion: " + mutationType +
+                "\nReplacement: " + replacementType);
     }
 }

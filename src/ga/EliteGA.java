@@ -14,4 +14,11 @@ public class EliteGA extends GA{
         setMutation(String.valueOf(Utilities.MUTATIONS.RandomResetMutation));
         setReplacement(String.valueOf(Utilities.REPLACEMENT.Elite));
     }
+
+    // overriding the setReplacement since the programmer should not change the
+    // property of EliteGA during runtime
+    @Override
+    public void setReplacement(String replacementType) {
+        super.replacementType =  String.valueOf(Utilities.REPLACEMENT.Elite);
+    }
 }
