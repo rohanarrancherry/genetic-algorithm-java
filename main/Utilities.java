@@ -54,7 +54,7 @@ public class Utilities {
      * used in various modes of Genetic Algorithm strategies.
      */
     public enum CROSSOVERS {
-        CustomCrossover,
+        UniformCrossover,
         OnePointCrossover
     }
 
@@ -63,7 +63,7 @@ public class Utilities {
      * used in various modes of Genetic Algorithm strategies.
      */
     public enum MUTATIONS {
-        CustomMutation,
+        RandomResetMutation,
         SwapMutation
     }
 

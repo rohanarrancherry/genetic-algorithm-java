@@ -4,16 +4,16 @@ import main.Utilities;
 import population.Chromosome;
 
 /**
- * The CustomCrossover class implements one of the Crossover criteria used in
+ * The UniformCrossover class implements one of the Crossover criteria used in
  * the Genetic Algorithm. At each iteration in the crossover() method in this
  * class, the first parent or the second parent is chosen at random and the
  * gene(character) of that parent is assigned to the Crossover Point of the
  * child Chromosome. The iteration stops when the Child Chromosome has the
  * length of the Parent Chromosomes.
  */
-public class CustomCrossover implements Crossover{
+public class UniformCrossover implements Crossover{
     /**
-     * The crossover() method of the CustomCrossover takes two objects of Chromosome
+     * The crossover() method of the UniformCrossover takes two objects of Chromosome
      * class as the arguments and returns a new child Chromosome created using these
      * two parent Chromosomes.
      * @param firstParent

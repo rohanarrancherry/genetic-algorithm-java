@@ -12,9 +12,9 @@ import selection.SelectionFactory;
 
 public class GA {
     String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
-    String crossoverType = String.valueOf(Utilities.CROSSOVERS.CustomCrossover);
-    String mutationType = String.valueOf(Utilities.MUTATIONS.CustomMutation);
-    String replacementType = String.valueOf(Utilities.MUTATIONS.CustomMutation);
+    String crossoverType = String.valueOf(Utilities.CROSSOVERS.UniformCrossover);
+    String mutationType = String.valueOf(Utilities.MUTATIONS.RandomResetMutation);
+    String replacementType = String.valueOf(Utilities.REPLACEMENT.NonElite);
 
     public void setSelection(String selectionType){
         this.selectionType = selectionType;
@@ -39,7 +39,8 @@ public class GA {
         Population population;
         population = Utilities.createPopulation();
         int noOfChildsToBeCreated = 0;
-
+        System.out.println("********************************************");
+        System.out.println("TARGET STRING: " + Utilities.TARGET);
         while(!found && generation<MAX_GENERATIONS){
             population.sort();
             if(population.get(0).getFitness() >= Utilities.TARGET.length())
