@@ -1,3 +1,15 @@
+package ga;
+
+import crossover.Crossover;
+import crossover.CrossoverFactory;
+import main.Utilities;
+import mutation.Mutation;
+import mutation.MutationFactory;
+import population.Chromosome;
+import population.Population;
+import selection.Selection;
+import selection.SelectionFactory;
+
 public class GA {
     String selectionType = String.valueOf(Utilities.SELECTIONS.RouletteWheelSelection);
     String crossoverType = String.valueOf(Utilities.CROSSOVERS.CustomCrossover);

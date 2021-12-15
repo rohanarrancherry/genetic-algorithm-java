@@ -1,3 +1,7 @@
+package selection;
+
+import main.Utilities;
+
 public class SelectionFactory {
     public Selection createSelection(String selectionType){
         Selection chromosomeSelection = null;

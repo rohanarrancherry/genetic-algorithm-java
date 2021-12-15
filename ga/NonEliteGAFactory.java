@@ -1,3 +1,5 @@
+package ga;
+
 public class NonEliteGAFactory extends GAFactory{
     @Override
     GA createGA() {

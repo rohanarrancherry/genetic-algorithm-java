@@ -1,3 +1,7 @@
+package crossover;
+
+import main.Utilities;
+
 public class CrossoverFactory {
     public Crossover createCrossover(String crossoverType){
         Crossover crossover = null;

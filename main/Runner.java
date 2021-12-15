@@ -1,3 +1,10 @@
+package main;
+
+import ga.EliteGAFactory;
+import ga.GA;
+import ga.GAFactory;
+import ga.NonEliteGAFactory;
+
 public class Runner {
 
     public static void main(String args[]){

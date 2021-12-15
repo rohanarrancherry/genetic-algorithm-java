@@ -1,3 +1,7 @@
+package ga;
+
+import main.Utilities;
+
 public class NonEliteGA extends GA{
 
     public NonEliteGA(){

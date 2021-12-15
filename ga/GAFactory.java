@@ -1,3 +1,5 @@
+package ga;
+
 public abstract class GAFactory {
 
     public GA getGA(){

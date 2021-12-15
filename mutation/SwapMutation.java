@@ -1,3 +1,8 @@
+package mutation;
+
+import main.Utilities;
+import population.Chromosome;
+
 /**
  * The SwapMutation class implements one of the Mutation criteria used in
  * the Genetic Algorithm. The mutation on a Chromosome occurs only if the

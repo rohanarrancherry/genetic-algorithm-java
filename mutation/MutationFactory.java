@@ -1,3 +1,7 @@
+package mutation;
+
+import main.Utilities;
+
 public class MutationFactory {
     public Mutation createMutation(String mutationType){
         Mutation mutation = null;
