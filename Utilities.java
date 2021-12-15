@@ -28,6 +28,12 @@ public class Utilities {
     }
     public enum MUTATIONS {
         CustomMutation,
+        SwapMutation
+    }
+
+    public enum REPLACEMENT {
+        Elite,
+        NonElite
     }
 
     public static int randomNumber(int lowerBound, int upperBound){
